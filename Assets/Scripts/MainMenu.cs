@@ -5,21 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public Animator transitionAnim;
-    public string sceneName;
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartCoroutine(Loadscene());
+            SceneManager.LoadScene(+1);
         }
-    }
-
-    IEnumerator Loadscene()
-    {
-        transitionAnim.SetTrigger("end");
-        yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(sceneName);
     }
 }
